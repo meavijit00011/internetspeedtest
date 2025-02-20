@@ -8,7 +8,7 @@ const measureDownloadSpeed = async () => {
   let startTime = 0;
   try {
     await axios.get('https://www.gstatic.com/webp/gallery3/1.png', {
-      onDownloadProgress: function (progressEvent) {
+      onDownloadProgress: function () {
         startTime = startTime == 0 ? performance.now() : startTime;
       },
     });
